@@ -16,17 +16,17 @@ public class CurrentConditionsDisplay implements  DisplayElement {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				WeatherData wd = (WeatherData)(arg0.getSource());
-				wd.measurementsChanged();
+				update(wd.getTemperature(), wd.getHumidity(), wd.getPressure());
 			}			
 		});
 
 	}
 	
-	/*public void update(float temperature, float humidity, float pressure) {
+	public void update(float temperature, float humidity, float pressure) {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		display();
-	}*/
+	}
 	
 	public void display() {
 		System.out.println("Current conditions: " + temperature 

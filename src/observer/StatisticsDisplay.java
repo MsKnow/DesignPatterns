@@ -17,7 +17,7 @@ public class StatisticsDisplay implements  DisplayElement {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				WeatherData wd = (WeatherData)(arg0.getSource());
-				wd.measurementsChanged();
+				update(wd.getTemperature(), wd.getHumidity(), wd.getPressure());
 			}			
 		});
 	}
