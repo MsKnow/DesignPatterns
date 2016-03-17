@@ -19,6 +19,9 @@ public class CurrentConditionsDisplay implements  DisplayElement {
 				update(wd.getTemperature(), wd.getHumidity(), wd.getPressure());
 			}			
 		});
+		/*weatherData.addActionListener((ActionEvent arg0)->{
+			
+		});*/
 
 	}
 	

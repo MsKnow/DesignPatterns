@@ -14,14 +14,14 @@ public class WeatherData {
 		listeners = new ArrayList<ActionListener>();
 	}
 
-	public void addActionListener(ActionListener o) {
-		listeners.add(o);
+	public void addActionListener(ActionListener listener) {
+		listeners.add(listener);
 	}
 
 	public void removeActionListener(ActionListener o) {
 
 	}
-
+	//传入一个actionEvent like网络获取的结果 结果是三个测量结果 放在成员变量中 然后把自己传过去，包装在actionEvent中
 	public void processEvent(ActionEvent o) {
 
 		for (ActionListener listener : listeners) {
