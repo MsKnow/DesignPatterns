@@ -5,13 +5,31 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 public class WeatherData {
-	private ArrayList<ActionListener> listeners;
+	private static ArrayList<ActionListener> listeners;
 	private float temperature;
 	private float humidity;
 	private float pressure;
+	
+	private static WeatherData weatherData = null;
 
-	public WeatherData() {
-		listeners = new ArrayList<ActionListener>();
+	public static WeatherData getWeatherData(){
+		
+		if(weatherData == null){
+			synchronized(WeatherData.class){
+				if(weatherData == null){
+					weatherData = new WeatherData();
+					listeners = new ArrayList<ActionListener>();
+				}
+				
+			}
+			
+		}
+		
+		return weatherData;
+	}
+	
+	private  WeatherData() {
+		//listeners = new ArrayList<ActionListener>();
 	}
 
 	public void addActionListener(ActionListener listener) {

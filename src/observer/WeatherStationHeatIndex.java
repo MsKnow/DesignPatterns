@@ -3,7 +3,7 @@ package observer;
 public class WeatherStationHeatIndex {
 
 	public static void main(String[] args) {
-		WeatherData weatherData = new WeatherData();
+		WeatherData weatherData = WeatherData.getWeatherData();
 		CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
 		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
 		ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
